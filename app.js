@@ -32,12 +32,16 @@ const createTask = (task, index) => {
 }
 
 
-
+const filterTasks = () => {
+    const activeTasks = tasks.length && tasks.filter(item => item.completed == false);
+    const completedTasks = tasks.length && tasks.filter(item => item.completed == true);
+    tasks = [...activeTasks,...completedTasks];
+}
 
 const fillList = () => {
     todoList.innerHTML = "";
     if(tasks.length > 0) {
-        
+        filterTasks();
         tasks.forEach((item, index) => {
             todoList.innerHTML += createTask(item, index);
 
