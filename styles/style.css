@@ -1,0 +1,72 @@
+body, html {
+    margin: 0;
+    padding: 0;
+
+    background-color: bisque;
+}
+
+h1 {
+   font-size: 30px;
+   font-family: 'Courier New', Courier, monospace;
+   font-weight: bold;
+   text-align: center; 
+}
+
+
+.block {
+    background-color: grey;
+    border-radius: 10px;
+    width: 400px;
+    margin: 0 auto;
+
+    min-height: 400px;
+
+
+    box-shadow: 1px #fff;
+
+}
+
+.task {
+    border-radius: 5px;
+}
+
+.add-todo {
+    width: fit-content;
+    margin: 0 15px 30px;
+}
+
+
+.todo-item {
+    width: fit-content;
+    display: flex;
+    margin: 10px 25px 0;
+}
+
+.todo-item.delition {
+    animation: opacity 1s ease-in-out;
+}
+
+.todo-item.checked{
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+.btn-delete {
+    background: 0;
+    border: 0;
+}
+
+.btn-delete:hover {
+    font-size: 18px;
+    color: red;
+}
+
+
+@keyframes opacity {
+    from {
+        opacity: 1;
+    } 
+    to {
+        opacity: 0;
+    }
+}
