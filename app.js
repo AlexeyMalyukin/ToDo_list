@@ -74,10 +74,11 @@ const completeTask = index => {
 
 
 addTask.addEventListener('click', () => {
-    tasks.push(new Task(taskInput.value));
-    updateLocal();
-    fillList();
-    taskInput.value = '';
+    taskInput.value != '' ? 
+        (tasks.push(new Task(taskInput.value)),
+        updateLocal(),
+        fillList(), 
+        taskInput.value = '') : '' ;
 });
 
 const deleteTask = index => {
