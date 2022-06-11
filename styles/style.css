@@ -114,9 +114,13 @@ h1 {
 
 .todo_list {
     margin-top: 40px;
-
     padding-bottom: 20px;
-    
+}
+
+.todo_empty {
+    font-size: 25px;
+    text-align: center;
+    margin-top: 60px;
 }
 
 
@@ -196,7 +200,7 @@ h1 {
     }
 
     .todo-item {
-        background-color: hsla(0, 2%, 55%, 0.5);
+        background-color: rgb(225, 225, 225, 0.5)
     }
 
     

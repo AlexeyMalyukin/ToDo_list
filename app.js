@@ -47,6 +47,8 @@ const fillList = () => {
 
         });
         todoTasks = document.querySelectorAll('.todo-item');
+    } else {
+        todoList.innerHTML = `<div class="todo_empty">You don't have tasks...<div>`;
     }
 }
 
