@@ -158,6 +158,7 @@ h1 {
     width: 10%;
     
     margin: auto 0;
+    cursor: pointer;
 }
 
 .btn-complete:hover {
@@ -175,6 +176,7 @@ h1 {
 
     border-bottom-right-radius: 4px;
     border-top-right-radius: 4px;
+    cursor: pointer;
 }
 
 .btn-delete:hover {
@@ -188,15 +190,23 @@ h1 {
     height: 100%;
     width: 8%;
     margin: auto;
+
+    transform: .2s font-size 18px;
+    
 }
 
 .btn-important {
     position: absolute;
     opacity: 0;
+    cursor: pointer;
 }
 
 .important_star {
     margin: auto;
+}
+
+.imprt:hover {
+    font-size: 18px;  
 }
 
 .important_star.important {
