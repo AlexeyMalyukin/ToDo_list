@@ -135,6 +135,10 @@ h1 {
 
 }
 
+.todo-item:hover {
+    background-color: hsla(0, 2%, 55%, 0.2);
+}
+
 .todo-item.delition {
     animation: opacity 1s ease-in-out;
 }
