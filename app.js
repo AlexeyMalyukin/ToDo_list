@@ -2,7 +2,7 @@ const addTask = document.getElementById('add-task-btn');
 const taskInput = document.getElementById('description-task');
 const todoList = document.querySelector('.todo_list');
 
-
+//const importantStar = documen.querySelector('.important_design');
 
 let tasks;
 !localStorage.tasks ? tasks = [] : tasks = 
@@ -14,6 +14,7 @@ let todoTasks = [];
 function Task(desription) {
     this.description = desription;
     this.completed = false;
+    this.important = false;
 }
 
 const createTask = (task, index) => {
@@ -22,6 +23,11 @@ const createTask = (task, index) => {
             
             <input onclick="completeTask(${index})" type="checkbox" class="btn-complete" ${task.completed ? 'checked' : ''}>
             <div class="description">${task.description}</div>
+
+            <div class="imprt">
+                <input onclick="importantTask(${index})" type="checkbox" class="btn-important" ${task.important ? 'important' : ''}>
+                <label class="important_star ${task.important ? 'important' : ''}"><i class="fa-solid fa-star"></i></label>
+            </div>
             <div class="buttons">
                 
                 <button onclick="deleteTask(${index})" class="btn-delete"><i class="fas fa-trash"></i></button>
@@ -33,9 +39,10 @@ const createTask = (task, index) => {
 
 
 const filterTasks = () => {
-    const activeTasks = tasks.length && tasks.filter(item => item.completed == false);
-    const completedTasks = tasks.length && tasks.filter(item => item.completed == true);
-    tasks = [...activeTasks,...completedTasks];
+    const activeTasks = tasks.length && tasks.filter(item => (item.completed == false && item.important == false));
+    const completedTasks = tasks.length && tasks.filter(item => (item.completed == true)); 
+    const importantTasks = tasks.length && tasks.filter(item => (item.completed == false && item.important == true));
+    tasks = [...importantTasks,...activeTasks,...completedTasks];
 }
 
 const fillList = () => {
@@ -63,12 +70,25 @@ const completeTask = index => {
     tasks[index].completed = !tasks[index].completed;
     if(tasks[index].completed) {
         todoTasks[index].classList.add('checked');
+        tasks[index].important = false;
     } else {
         todoTasks[index].classList.remove('checked');
     }
     updateLocal();
     fillList();
 
+}
+
+const importantTask = index => {
+    
+    tasks[index].important = !tasks[index].important;
+    if(tasks[index].important) {
+        todoTasks[index].classList.add('important');
+    } else {
+        todoTasks[index].classList.remove('important');
+    }
+    updateLocal();
+    fillList();
 }
 
 

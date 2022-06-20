@@ -86,7 +86,7 @@ h1 {
 
 .description {
     font-size: 25px;
-    width: 80%;
+    width: 75%;
 
     margin: auto 0;
 }
@@ -181,6 +181,26 @@ h1 {
     font-size: 16px;
     background-color: rgb(206, 24, 24);
     
+}
+
+/* Important */
+.imprt {
+    height: 100%;
+    width: 8%;
+    margin: auto;
+}
+
+.btn-important {
+    position: absolute;
+    opacity: 0;
+}
+
+.important_star {
+    margin: auto;
+}
+
+.important_star.important {
+    color: yellow;
 }
 
 
