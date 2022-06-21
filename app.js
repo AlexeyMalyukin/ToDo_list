@@ -2,7 +2,7 @@ const addTask = document.getElementById('add-task-btn');
 const taskInput = document.getElementById('description-task');
 const todoList = document.querySelector('.todo_list');
 
-//const importantStar = documen.querySelector('.important_design');
+//const importantDiv = document.querySelectorAll('.imprt');
 
 let tasks;
 !localStorage.tasks ? tasks = [] : tasks = 
@@ -71,8 +71,10 @@ const completeTask = index => {
     if(tasks[index].completed) {
         todoTasks[index].classList.add('checked');
         tasks[index].important = false;
+        
     } else {
         todoTasks[index].classList.remove('checked');
+        
     }
     updateLocal();
     fillList();
