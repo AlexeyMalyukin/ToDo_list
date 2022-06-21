@@ -105,6 +105,14 @@ addTask.addEventListener('click', () => {
         taskInput.value = '') : '' ;
 });
 
+taskInput.addEventListener('keypress', (event) => {
+    
+    if(event.key == "Enter") {
+        event.preventDefault();
+        addTask.click();
+    };
+});
+
 const deleteTask = index => {
     todoTasks[index].classList.add('delition');
     setTimeout(() => {
@@ -112,4 +120,4 @@ const deleteTask = index => {
         updateLocal();
         fillList();
     }, 500)
-}
+};
